@@ -1,0 +1,12 @@
+close all;
+clear all;
+s=imread('trees.tif');
+imshow(s),title('original image');
+%disp(s);
+figure, imhist(s),title('histogram plot of an image');
+I = histeq(s);
+figure, imhist(I),title('histogram of an equalised image');
+I1=im2bw(I);
+figure, imshow(I1),title('binary image');
+I2=double(I);
+I3=surf(I2),title('surface plot of histogram equalised image');
